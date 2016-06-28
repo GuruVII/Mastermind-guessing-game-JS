@@ -26,21 +26,6 @@ gulp.src(['src/app.js'])
 });
 
 gulp.task('moveBower',function(){
-gulp.src(['bower_components/angular-ui-router/release/angular-ui-router.min.js'])
-	.pipe(flatten())
-	.pipe(gulp.dest('dist/assets/js'))
-	.pipe(notify('Moved bower angular router to dist/assets/js')
-	);
-gulp.src(['bower_components/angular/angular.min.js'])
-	.pipe(flatten())
-	.pipe(gulp.dest('dist/assets/js'))
-	.pipe(notify('Moved bower angular assets to dist/assets/js')
-	);
-gulp.src(['bower_components/angular/angular-csp.css'])
-	.pipe(flatten())
-	.pipe(gulp.dest('dist/assets/js'))
-	.pipe(notify('Moved bower angular CSS assets to dist/assets/js')
-	);
 gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css','bower_components/bootstrap/dist/css/bootstrap-theme.min.css'])
 	.pipe(flatten())
 	.pipe(gulp.dest('dist/assets/css'))
@@ -60,6 +45,11 @@ gulp.src(['bower_components/angular-resource/angular-resource.min.js','angular-r
 	.pipe(flatten())
 	.pipe(gulp.dest('dist/assets/js'))
 	.pipe(notify('Moved bower fonts components to dist/assets/js'));
+gulp.src(['bower_components/jquery/dist/jquery.min.js'])
+	.pipe(flatten())
+	.pipe(gulp.dest('dist/assets/js'))
+	.pipe(notify('Moved bower jquery assets to dist/assets/js')
+	);
 });
 
 gulp.task('move', function () {
