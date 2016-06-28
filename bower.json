@@ -1,0 +1,21 @@
+{
+  "name": "Mastermind",
+  "homepage": "https://github.com/GuruVII/Mastermind-guessing-game-JS",
+  "authors": [
+    "GuruVII <guruvii@gmail.com>"
+  ],
+  "description": "Mastermin board game",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0"
+  }
+}
