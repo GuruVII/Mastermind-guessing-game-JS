@@ -9,4 +9,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+    text-indent: -9999px; 
+   }
+
+

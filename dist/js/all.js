@@ -36,6 +36,11 @@ var numOfAttempts = 0;
 var allGuesses = [];
 var duplicate = false; //this variable will be used to test, if you entered a duplicate combination
 
+function attempts(){ //tells us the number of attept you had
+	$("#attempts").text(numOfAttempts);
+}
+
+attempts();
 
 $("#try").prop("disabled", false ); //if the try button is disabled, this enables it
 
@@ -136,18 +141,23 @@ function check() {
 
 
 if ((duplicate == false) && (check() == false)){ //check, if the guess is a duplciate, if not, then it proceeds with the code
-guess.forEach(function(currentValue, index){ //adds your current guess to the page
-	if (index == 0){ //each guess should have its own row
-		$( "#results" ).append("<div class='row'>")
-	};
-	$( "#results" ).append( "<div class='col-xs-1 rounded-border unselectable' style='background-color:"+currentValue+"; color:"+currentValue+"'>"+ currentValue + "</div>" );
-	if (index == 3){ //each guess should have its own row
-		$( "#results" ).append("</div>")
-	};
-});
+	guess.forEach(function(currentValue, index){ //adds your current guess to the page
+		if (index == 0){ //each guess should have its own row
+			$( "#results" ).append("<div class='row'>")
+			$( "#results" ).append( "<div class='col-xs-offset-4 col-xs-1 rounded-border unselectable' style='background-color:"+currentValue+"; color:"+currentValue+"'>"+ currentValue + "</div>" );
+		};
+		if (index !=0){
+		$( "#results" ).append( "<div class='col-xs-1 rounded-border unselectable' style='background-color:"+currentValue+"; color:"+currentValue+"'>"+ currentValue + "</div>" );
+		}
+
+	});
+	$( "#results" ).append("<div class='col-xs-3'><div class='col-xs-12' style='border-top: 1px solid black;'>correct positions: " +currentResult.correctPlace + "</div><div class='col-xs-12'>correct colors: " + currentResult.correctColour + "</div></div>" )
 
 	numOfAttempts++ // cunting the numbers of attemps
+	attempts(); //calls function that inputs the new number of attempts
 	console.log(numOfAttempts);
+
+
 	if (numOfAttempts == 10){
 		alert("You've used all your attempts, the correct combination was " + computerSelectedColours[0] + ", " + computerSelectedColours[1] + ", " + computerSelectedColours[2] + ", "  + computerSelectedColours[3] );
 		$("#try").prop("disabled", true );
