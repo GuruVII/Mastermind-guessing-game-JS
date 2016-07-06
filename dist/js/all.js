@@ -55,7 +55,6 @@ function selectColour() {
 		colours.splice(computerSelectColourIndex, 1); // removing the randomly selected colour from the colours array
 		randomMultiplier--; //reducing the randomMultiplier to account for the now smaller colours array
 	}
-	console.log("Computer has selected his colours, they are " + computerSelectedColours);
 }
 
 selectColour();
@@ -99,7 +98,7 @@ $("#try").click(function() {
 	$(".colour").each(function() { //cycles though all dom elements with the class colour
 	guess.push($(this).text()); //pushes the value of those elements into an array
 	});
-	console.log(guess);
+	
 
 	for (var i = 0; i < 4; i++) { //check, if the the computer selected colours match with the guess
 		for (var j = 0; j < 4; j++) {
@@ -155,18 +154,11 @@ if ((duplicate == false) && (check() == false)){ //check, if the guess is a dupl
 
 	numOfAttempts++ // cunting the numbers of attemps
 	attempts(); //calls function that inputs the new number of attempts
-	console.log(numOfAttempts);
-
-
 	if (numOfAttempts == 10){
 		alert("You've used all your attempts, the correct combination was " + computerSelectedColours[0] + ", " + computerSelectedColours[1] + ", " + computerSelectedColours[2] + ", "  + computerSelectedColours[3] );
 		$("#try").prop("disabled", true );
 		}
 	allGuesses.push(guess);//pushes this rounds gusses into a single array
-
-console.log(currentResult.correctColour);
-console.log(currentResult.correctPlace);
-console.log(allGuesses);
 };
 duplicate = false;
 });
