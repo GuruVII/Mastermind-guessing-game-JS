@@ -114,6 +114,7 @@ $("#try").click(function() {
 		if ( currentResult.correctPlace == 4){ //testing if you gussed all the colours corectly
 			numOfAttempts++ //adds an attempt becuase attempts are normally counted elsewhere
 			alert("congratulations, you've deduced the pattern, it took you " + numOfAttempts + " attempt(s)")
+			numOfAttempts--//removes an attemps so that the alert and page count will be the same
 			$("#try").prop("disabled", true );
 		}
 }
