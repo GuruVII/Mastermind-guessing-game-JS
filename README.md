@@ -20,7 +20,8 @@ Note: running gulp watch should automatically open your browser and open th app,
 
 ## 3) Playing the game
 The goal is to guess the computer generated combination. You have 10 attempts.
-The app will you tell you how many colours you placed in the right position and how many you've onyl guessed the colour of.
+The app will you tell you how many colours you placed in the right position and how many you've only guessed the colour of.
+You have to click on the color squres to change their color.
 
 ## 4) Demo
 [link](http://guru.mobiusit.net/Mastermind/)
