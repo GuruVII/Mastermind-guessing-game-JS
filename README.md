@@ -1,6 +1,6 @@
 # Mastermind-guessing-game-JS
 
-## 1) Prerequesits
+## 1) Prerequisites
 node.JS, bower, gulp
 
 ## 2) Deployment
